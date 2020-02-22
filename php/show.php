@@ -1,20 +1,9 @@
 <?php
-$dbhost = 'localhost: 3306';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'qixqi_web';
 
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass);
-if(!$conn){
-    die('连接失败' . mysqli_error($conn));
-}
-// echo '连接成功 <br />';
-
-// 设置编码
-mysqli_query($conn, "set names utf8");
+error_reporting(0);
+include_once('connect.php');
 
 $sql = 'SELECT fileId, filename, filetype, filesize, username, uploadtime, uploadpath from upload order by fileId desc';
-mysqli_select_db($conn, $dbname);
 $retval = mysqli_query($conn, $sql);
 if(!$retval){
     die('无法读取数据 ' . mysqli_error($conn));
