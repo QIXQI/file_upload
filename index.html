@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf8" />
+        <title>upload of qixqi</title>
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+    <body>
+        <div id="form">
+        <form action="php/upload.php" id="forms" name="forms" method="post"
+            enctype="multipart/form-data">
+            <fieldset id="field"> 
+                <legend>上传文件信息</legend>
+                <label for="username" class="label_message"><span>上传人：</span></label>
+                <input type="text" id="username" name="username" /><label id="name2"></label><br />
+                <label for="password" class="label_message"><span>上传密匙：</span></label>
+                <input type="password" id="password" name="password" /><label id="pass"></label><br />
+                <label for="files" class="label_message"><span>上传文件：</span></label>
+                <input type="file" id="files" name="files" /><label id="file1"></label><br />
+                <input type="submit" id="subscribe" name="subscribe" value="提交" />
+            </fieldset> 
+        </form>
+        </div>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

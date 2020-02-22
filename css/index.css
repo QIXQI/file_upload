@@ -1,0 +1,64 @@
+/* .label_message{ */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url("../image/body.jpg");
+}
+
+#forms{
+    position: absolute;
+    width: 500px;
+    margin-left: 500px;
+    margin-top: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+#field{
+    border: 0;
+}
+
+.label_message{
+    display: block;
+    margin: 20px;
+}
+    
+.label_message > span{
+    position: relative;
+    width: 96px;
+    text-align: justify;
+    float: left;
+    margin-top: lem;
+    height: 1em;
+}
+    
+.label_message > span::before{
+    content: '*'; 
+    position: absolute;
+    font-size: 24px;
+    left:-1em;
+    color: orange;
+    line-height: 0;
+    top: .5em;
+}
+    
+.label_message > span::after{
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+    
+.label_message > input{
+    width: 210px;
+    padding: 10px 20px;
+    margin-left: 20px;
+}
+
+#subscribe{
+    margin-left: 50px;
+    margin-top: 20px;
+}
