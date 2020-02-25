@@ -32,10 +32,10 @@ if(file_exists("../upload/" .$_FILES["files"]["name"])){
         if(move_uploaded_file($_FILES["files"]["tmp_name"], $stored_path)){
             echo "Stored in: " . $stored_path ."<br />";
         }else{
-            echo "Stored failed: file save error<br />";
+            die("Stored failed: file save error.");
         }
     }else{
-        echo "Stored failed: no post<br />";
+        die("Stored failed: no post.");
     }
 }
 
