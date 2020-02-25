@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 
 // mysql 信息
 $dbhost = 'localhost: 3306';
