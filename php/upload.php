@@ -18,6 +18,11 @@ if($_FILES["files"]["error"] > 0){
     // echo "Stored in: " .$_FILES["files"]["tmp_name"] ."<br /><br />";    // 存储在服务器的临时副本名称
 }
 
+// 判断目录是否存在
+if (!is_dir('../upload')){
+    mkdir('../upload');
+}
+
 // 将文件保存到服务器
 if(file_exists("../upload/" .$_FILES["files"]["name"])){
     die("文件 " .$_FILES["files"]["name"] . "  已经存在<br />");
