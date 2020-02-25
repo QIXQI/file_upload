@@ -16,5 +16,16 @@
     * 使用 fileinfo 扩展检测试试
 6. 远程主机拒绝 httpd 的方式去创建目录，php/upload.php 中检测'../upload'目录不存在时，创建不了，似乎是远程无法写操作文件系统
     * 解决方法
+        * 在 upload_file 根目录下手动创建 upload 目录
+        * 执行 chmod 777 upload，赋予写权限
+    * 后续尝试解决方法
         * chcon -R -t httpd_sys_content_rw_t /path/to/www/dir/for/rw，但是每次添加新的目录后都需要重新执行该命令，麻烦啊
         * https://blog.csdn.net/u012560213/article/details/80228050
+7. 可以尝试使用 head方法，使用post方法需要每次访问都要上传文件，异常情况如文件上传过，造成带宽的浪费
+8. mariadb 表插入中午数据失败
+    * 修改 /etc/my.cnf.d/client.cnf，在[client]字段加入  default-character-set=utf8
+    * 修改 /etc/my.cnf.d/server.cnf，在[mysqld]字段加入 character-set-server=utf8
+    * 重启 mariadb，systemctl restart mariadb
+    * 删除数据库qixqi_web，drop database qixqi_web，一定要删除重新创建
+    * 重新创建数据库qixqi_web，create database qixqi_web
+    * 初始化，访问 init.php

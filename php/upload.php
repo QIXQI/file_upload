@@ -65,7 +65,7 @@ $sql = "INSERT INTO upload ".
         "('$fileId', '$filename', '$filetype', '$filesize', '$username', '$uploadtime', '$uploadpath') ";
 
 $retval = mysqli_query($conn, $sql);
-if(!retval){
+if(!$retval){
     die('无法插入数据  ' .mysqli_error($conn));
 }
 echo '插入数据成功 <br />';
