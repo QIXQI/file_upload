@@ -20,7 +20,7 @@ if($_FILES["files"]["error"] > 0){
 
 // 判断目录是否存在
 if (!is_dir('../upload')){
-    mkdir('../upload');
+    mkdir('../upload');     // 远程无效
 }
 
 // 将文件保存到服务器

@@ -14,3 +14,7 @@
     * 插入数据时 fileId = Max(fileId) + 1;
 5. 更改文件名时，更改前后使用mime_conten_type(file)检测文件类型没有变化，但是上传前更改文件名，$_FILES['file']['type'] 检测到的文件类型会改变
     * 使用 fileinfo 扩展检测试试
+6. 远程主机拒绝 httpd 的方式去创建目录，php/upload.php 中检测'../upload'目录不存在时，创建不了，似乎是远程无法写操作文件系统
+    * 解决方法
+        * chcon -R -t httpd_sys_content_rw_t /path/to/www/dir/for/rw，但是每次添加新的目录后都需要重新执行该命令，麻烦啊
+        * https://blog.csdn.net/u012560213/article/details/80228050
