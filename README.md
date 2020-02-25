@@ -29,3 +29,5 @@
     * 删除数据库qixqi_web，drop database qixqi_web，一定要删除重新创建
     * 重新创建数据库qixqi_web，create database qixqi_web
     * 初始化，访问 init.php
+8. 删除操作时，应该将fileId 重新刷新
+9. 编辑操作或删除操作完成后，刷新页面时应该保存当前操作类型

@@ -41,7 +41,8 @@ download.onclick = function(){
             }else{                          // 不是第一个tr 时，加上下载链接
                 // var dPath = 'http://www.zhengxiang4056.club' + trTag[i].getElementsByTagName('td')[6].innerText.substr(21);         // 应该 http 开始，否则跳转到本地文件系统
                 // var dPath = '/usr/share/nginx/html' + trTag[i].getElementsByTagName('td')[6].innerText.substr(21);             // 绝对地址 download 有点懵
-                var dPath = '../upload/' + trTag[i].getElementsByTagName('td')[6].innerText.substr(38);
+                // var dPath = '../upload/' + trTag[i].getElementsByTagName('td')[6].innerText.substr(38);
+                var dPath = trTag[i].getElementsByTagName('td')[6].innerText;
                 console.log(dPath);
                 trTag[i].getElementsByTagName('td')[7].innerHTML = '<font color="blue"><a href="' + dPath + '" download=""><label>下载</label></a></font>';
             }

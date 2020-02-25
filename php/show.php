@@ -13,7 +13,8 @@ echo '<h2>Welcome to UPLOAD.php<h2>';
 echo '<table border="1"><tr><td>fileId</td><td>文件名</td><td>文件类型</td><td>文件大小</td>
     <td>上传人</td><td>上传时间</td><td>上传路径</td><td>下载</td></tr>';
 while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC)){
-    $download = '..' .substr($row['uploadpath'], 30);
+    // $download = '..' .substr($row['uploadpath'], 30);
+    $download = $row['uploadpath'];
     // str_replace('/usr/share/nginx/html/', '', $download);
     // delete($download, 0, 22);
     // echo $download;

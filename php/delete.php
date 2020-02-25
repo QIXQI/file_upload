@@ -27,6 +27,20 @@ $sql = "delete from upload where fileId = $fileId";
 $retval = mysqli_query($conn, $sql) or die('删除条目失败: '.mysqli_error($conn));;
 // echo '删除条目成功'.'<br />';
 
+// fileId 重新排序
+$sql = '
+    alter table upload drop fileId;
+    alter table upload add fileId int(11) first;
+    alter table upload modify column fileId int(11) not null auto_increment, add primary key(fileId);
+';
+$retval = mysqli_multi_query($conn, $sql) or die('fileId 重新排序失败：'.mysqli_error($conn));      // mysqli_query 报错，只能查询一条语句
+while (mysqli_next_result($conn)){  // mysqli_multi_query 似乎异步
+    if ($result = mysqli_store_result($conn)){
+        mysqli_free_result($result);    // 释放内存
+    }
+}
+
+
 // 删除文件
 $filepath = '../upload/'.$filename;
 $result = unlink($filepath);
