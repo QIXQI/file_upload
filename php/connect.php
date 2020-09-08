@@ -4,7 +4,7 @@ error_reporting(0);
 // mysql 信息
 $dbhost = 'localhost: 3306';
 $dbuser = 'root';
-$dbpass = '';
+$dbpass = '1214';
 $dbname = 'qixqi_web';
 
 // 连接
